@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ReplState" timestamp="1402265412128">{:repl-history {:ide [], :local [&quot;(defn foo\n  \&quot;I don't do a whole lot.\&quot;\n  [x]\n  (println x \&quot;Hello, World!\&quot;)\n  (client/get \&quot;http://www.baidu.com\&quot;))&quot; &quot;(foo \&quot;hi\&quot;)&quot; &quot;(defn foo\n  \&quot;I don't do a whole lot.\&quot;\n  [x]\n  (println x \&quot;Hello, World!\&quot;)\n  (client/get (str mofunUrl OK_ID)))&quot; &quot;foo&quot; &quot;(defn foo\n  (client/get (str mofunUrl OK_ID)))&quot; &quot;(foo)&quot; &quot;\&quot;hi\&quot;&quot; &quot;(str mofunUrl OK_ID)&quot; &quot;(client/get \&quot;http://weibo.com\&quot;)&quot; &quot;(defn foo\n  []\n  (client/get (str mofunUrl OK_ID)))&quot; &quot;(:body (client/get (str mofunUrl OK_ID)))&quot; &quot;(client/get (str mofunUrl OK_ID))&quot; &quot;(slurp \&quot;/resources/json\&quot;)&quot; &quot;(slurp \&quot;resources/json\&quot;)&quot;], :remote []}}</component>
+</project>
+
