@@ -20,9 +20,7 @@
     (if (= status "ok")
       "ok")))
 
-
 (declare app* request )
-
 (def waitUser (ref ""))
 (defn pairTo [user]
   (if (or (empty? @waitUser)
@@ -37,11 +35,22 @@
       (ref-set waitUser "")
       res)))
 
+(defn cancel [user]
+  (if (= @waitUser user)
+    (do
+      (ref-set waitUser "")
+      {:status 200
+       :body "cancelSucceed"})
+    {:status 200
+     :body "cancelFailed"}))
+
 (defroutes
   app*
-  (GET "/pair" [user]
+  (GET "/pair" [user type]
        (dosync
-         (pairTo user)))
+         (cond
+           (= type "pair") (pairTo user)
+           (= type "cancel") (cancel user))))
   (compojure.route/not-found "Sorry,there's nothing here!"))
 
 (def app (compojure.handler/api app*))
@@ -53,6 +62,7 @@
   (catch Exception e))
 
 (def server (ref 'a))
+
 (defn run-server []
   (dosync (ref-set server (run-jetty #'app
                                      {:host "127.0.0.1"

@@ -8,4 +8,6 @@
                  [korma "0.3.0-RC5"]
                  [compojure "1.1.6"]
                  [ring "1.0.1"]
-                 [org.clojure/data.json "0.2.4"]])
+                 [org.clojure/data.json "0.2.4"]]
+  :plugins [[lein-ring "0.8.10"]]
+  :ring {:handler english.core/app})
